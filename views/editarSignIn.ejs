@@ -1,0 +1,31 @@
+<%- include header.ejs %>
+
+
+
+<div class="row">
+    <div class="large-4 medium-4 large-centered medium-centered columns">
+        <form action="/editarForm"  method="POST" data-abide>
+            <div class="name-field">
+                <label>Username<small>required</small>
+                  <input type="email" name='username' required>
+                </label>
+                <small class="error">Please Type A Correct Username</small>
+              </div>
+              <div class="email-field">
+                <label>Password <small>required</small>
+                  <input type="password" name='password' required pattern="alpha_numeric">
+                </label>
+                <small class="error">Please Type A Correct Password.</small>
+              </div>
+              <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+<%- include footer.ejs %>

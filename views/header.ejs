@@ -1,0 +1,55 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app='space'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Unknown</title>
+    <link href='https://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="stylesheets/app.css" />
+    <link rel="stylesheet" href="stylesheets/main.css" />
+    <script src="bower_components/modernizr/modernizr.js"></script>
+</head>
+<body>
+    
+    <div ng-controller='signed'>
+    
+       <div class="sticky">
+        <nav class="top-bar" data-topbar="" role="navigation" data-options="sticky_on: large">
+            <ul class="title-area">
+                <!-- Title Area -->
+                <li class="name">
+                    <h1><a href="#">Project Unkown</a></h1>
+                </li>
+                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+            </ul>
+            
+            <!-- Right Nav Bar Section -->
+            <section class="top-bar-section">
+                <ul class="right" ng-switch on="loginData">
+                    <li> <a href="#" ng-switch-when="false" class="btnx" data-reveal-id="myModal">Login Or Register</a> </li>
+                    <li> <a href="#" ng-switch-when="true" class="btnx" ng-click="logOut()" >Logout</a> </li>
+                </ul>
+            </section>
+        </nav>
+    </div>
+    
+    {{5+5}}
+    {{loginData}}
+    
+    <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" > >
+    
+            <div class="large-12 medium-12 small-12 columns" id="mod"  >
+                <ul>
+                    <li>
+                         <a href="#" class="button large" ng-click="signer()">Facebook</a>
+                    </li>
+                    <li>
+                         <a href="#" class="button large" ng-click="logOut()">LogOUt</a>
+                    </li>
+                </ul>
+            </div>
+    
+        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div>
+    
+</div>
