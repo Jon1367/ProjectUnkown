@@ -9,8 +9,12 @@ To Access Conente Management System:
 
 # Main Features
 
-- Visual Data that allows user to understand the MPC data in a fun interactive way.
+- algorithms that allow us to compute new data and explain it better.
 
-- Algorythms that allow us to compute new data and explain it better.
+- Data Visualization.
 
-- Dynamic Infographic that displays the asteroid it epoch and its approximate size with a comparison so user can vividly image how it looks.
+- Dynamic Infographics that displays the asteroid it's epoch and its approximate size with a comparison so user can vividly imaging how it looks.
+
+- Content Management System
+
+- Ability to Add, Update, Delete and repair.
