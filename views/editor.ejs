@@ -1,34 +1,28 @@
-<%- include header.ejs %>
+<%- include editorheading.ejs %>
 
-<div class="off-canvas-wrap" data-offcanvas>
-  <div class="inner-wrap">
-    
-    <nav class="tab-bar">
-      <section class="left-small">
-        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
-      </section>
-      
-      
-      <aside class="left-off-canvas-menu">
-      <ul class="off-canvas-list">
-      <li><label>Foundation</label></li>
-      <li><a href="#">The Psychohistorians</a></li>
-      <li><a href="#">...</a></li>
-    </ul>
-    </aside>
-    
-    <section class="right-small">
-        <a class="right-off-canvas-toggle menu-icon" href="#"><span></span></a>
-    </section>
-    
-        <aside class="right-off-canvas-menu">
-      <ul class="off-canvas-list">
-        <li><label>Users</label></li>
-        <li><a href="#">Hari Seldon</a></li>
-        <li><a href="#">...</a></li>
-      </ul>
-    </aside>
-    
-    </nav>
-  </div>
-</div>
+    <div class="row">
+        <div class="large-6 large-centered columns">
+          <br>
+          <h4 class="">Welcome to Project Unknown</h4>
+          <p id="blackText">Thanks for using Project Unknown Editor</p>
+          <p id="blackText">Easily manage the items in the database using a simple interface</p>
+          <p id="blackText">Using the navigation in the top right, you can easily add, update, and delete a asteroid from the database.</p>
+        </div>
+        <br></br>
+        <div class="small-6 large-centered columns">
+              
+            <div class="row collapse">
+                <div class="large-8 small-center columns">
+                    <form action="/processAdminSearch" method="POST">
+                        <input type="text" name="name" placeholder="Find asteroid" style="height: 51px;">
+                    </div>
+                    <div class="large-4 small-3 columns">
+                         <input type="submit" class="button" value="Search"/>
+                    </form>
+                </div>
+          </div>
+      </div>
+
+  
+
+<%- include editorfooter.ejs %>

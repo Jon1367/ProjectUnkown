@@ -1,0 +1,29 @@
+<%- include editorheading.ejs %>
+
+<div class="row">
+    <div class="large-12 small-12 columns">
+        <h2>Add new Admin User:</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-4 medium-4 large-centered medium-centered columns">
+        <form action="/AddAmind"  method="POST" data-abide>
+            <div class="name-field">
+                <label>Username <small>Required</small>
+                  <input type="email" name='username' required>
+                </label>
+                <small class="error">Please Type A Correct Username</small>
+              </div>
+              <div class="email-field">
+                <label>Password <small>required</small>
+                  <input type="password" name='password' required pattern="alpha_numeric">
+                </label>
+                <small class="error">Please Type A Correct Password.</small>
+              </div>
+              <button type="submit" class="button large">Submit</button>
+        </form>
+    </div>
+</div>
+
+<%- include editorfooter.ejs %>

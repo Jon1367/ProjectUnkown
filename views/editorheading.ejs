@@ -1,0 +1,74 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app='space'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Unknown</title>
+    <link href='https://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="stylesheets/app.css" />
+    <link rel="stylesheet" href="stylesheets/main.css" />
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/foundation/js/foundation.min.js"></script>
+
+</head>
+<body>
+  <!--<div class="off-canvas-wrap docs-wrap move-right" data-offcanvas="">-->
+  <!--<div class="inner-wrap">-->
+  <!--  <nav class="tab-bar">-->
+  <!--    <section class="left-small">-->
+  <!--      <a class="left-off-canvas-toggle menu-icon" aria-expanded="true"><span></span></a>-->
+  <!--    </section>-->
+
+  <!--    <section class="right tab-bar-section">-->
+  <!--      <h1 class="title">Foundation</h1>-->
+  <!--    </section>-->
+
+  <!--  </nav>-->
+
+  <!--  <aside class="right-off-canvas-menu">-->
+  <!--    <ul class="off-canvas-list">-->
+  <!--      <li><label>Foundation</label></li>-->
+  <!--      <li><a href="#">The Psychohistorians</a></li>-->
+  <!--      <li><a href="#">The Encyclopedists</a></li>-->
+  <!--      <li><a href="#">The Mayors</a></li>-->
+  <!--      <li><a href="#">The Traders</a></li>-->
+  <!--      <li><a href="#">The Merchant Princes</a></li>-->
+  <!--      <li><label>Foundation and Empire</label></li>-->
+  <!--      <li><a href="#">The General</a></li>-->
+  <!--      <li><a href="#">The Mule</a></li>-->
+  <!--      <li><label>Second Foundation</label></li>-->
+  <!--      <li><a href="#">Search by the Mule</a></li>-->
+  <!--      <li><a href="#">Search by the Foundation</a></li>-->
+  <!--    </ul>-->
+  <!--  </aside>-->
+
+  <div class="off-canvas-wrap docs-wrap" data-offcanvas ng-controller="editorNav">
+  <div class="inner-wrap">
+    <nav class="tab-bar">
+
+
+      <section class="middle tab-bar-section">
+        <h1 class="title">Project Unknown</h1>
+      </section>
+
+      <section class="right-small">
+        <a class="right-off-canvas-toggle menu-icon"><span></span></a>
+      </section>
+    </nav>
+
+
+
+    <aside class="right-off-canvas-menu">
+      <ul class="off-canvas-list">
+        <li><label>Users</label></li>
+        <li><a href="/editor">Admin Home</a></li>
+        <li><a href="#" class="button large" ng-click="logOut()">Logout</a></li>
+        <li><a href="/newAdmin">New Admin</a></li>
+        <li><a href="/addAstro">add Asteroid</a></li>        
+        <li><a href="/updateAstro">Update</a></li>
+        <li><a href="/deleteAstro">Delete</a></li>
+        <li><a href="/nasa">Api</a></li>
+      </ul>
+    </aside>
+

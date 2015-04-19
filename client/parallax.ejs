@@ -1,0 +1,32 @@
+<div class="row">
+
+    <% for(var i=0; i<8; i++){ %>
+        <div id="<%= data[i].Ref %><%= data[i].ScaleDistance %>" class="reveal-modal modalDude" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+               <%= data[i].Name %>
+               <%= data[i].ScaleDistance %>
+        </div>
+    
+    <div class="small-12 large-6 large-centered medium-centered columns asteroidBottom<%= data[i].ScaleDistance %>">
+        
+        <div class="row">
+            <div class="large-12 columns text-center"><h2><a class="nameText" href="#" data-reveal-id="<%= data[i].Ref %><%= data[i].ScaleDistance %>" ><%= data[i].Name %></a></h2></div>
+            <div class="large-4 columns text-center"><h5 class="nameText textHorizontal"> <%= data[i].Ref %> </h5></div>
+            <div class="large-4 columns text-center"><a href="#" data-reveal-id="<%= data[i].Ref %><%= data[i].ScaleDistance %>" ><img width="150" style="opacity: .8;" src="/img/test3.svg"></a></div>
+            <div class="large-4 columns text-center"> <h5 class="nameText textHorizontal"><%= data[i].LastObs %> </h5></div>
+        </div>
+        
+        
+        <!--<div class="">-->
+        <!--    <p class="text-centered"><%= data[i].readable_des %></p>-->
+            
+  
+        <!--</div>-->
+    </div>
+        <style>
+        .asteroidBottom<%= data[i].ScaleDistance %>{
+            margin-top: <%= data[i].ScaleDistance %>px;
+        }
+    </style>
+    <% } %>
+</div>  
+

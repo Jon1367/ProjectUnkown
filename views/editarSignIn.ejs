@@ -1,4 +1,4 @@
-<%- include header.ejs %>
+<%- include editorheading.ejs %>
 
 
 
@@ -6,14 +6,14 @@
     <div class="large-4 medium-4 large-centered medium-centered columns">
         <form action="/editarForm"  method="POST" data-abide>
             <div class="name-field">
-                <label>Username<small>required</small>
+                <label>Username <small>Required</small>
                   <input type="email" name='username' required>
                 </label>
                 <small class="error">Please Type A Correct Username</small>
               </div>
               <div class="email-field">
                 <label>Password <small>required</small>
-                  <input type="password" name='password' required pattern="alpha_numeric">
+                  <input type="password" name='password' required>
                 </label>
                 <small class="error">Please Type A Correct Password.</small>
               </div>
