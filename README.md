@@ -9,6 +9,11 @@ To Access Content Management System:
 Username : test@test.com
 Password : test1
 
+
+One Minute Video Explanation:
+[Video](https://www.youtube.com/watch?v=GpAJOKzxJ5M)
+
+
 # Main Features
 
 - Data Visualization.
