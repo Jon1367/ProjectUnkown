@@ -37,7 +37,8 @@ Our goal is to create a web based, interactive learning environment for anyone w
  - PHAs
  - TNOs, Centaurs and SDOs
  - Other unusual objects
-With a database containing over 600,000 records of orbital elements, that contain headings, and information that may be difficult to read, and interpret. We have added the data into a non-relational database that can parse and give us greater querying capabilities. We have created a group of 1000, of the closest NEAs scaled down to a 1:275,000km, starting from the closest and moving to the furthest NEA. Also with administrative capability to modify all of the data inserted and exported out of the database.
+
+With a database containing over 600,000 records of orbital elements, that contain headings, and information that may be difficult to read, and interpret. We have added the data into a non-relational database that can parse and give us greater querying capabilities. We have scaled down to a 1:275,000km, starting from the closest and moving to the furthest NEA. We also added administrative capability to modify all of the data inserted and exported out of the database.
 
 We have also added and API that allows the data to be used and shared easier than it was before. With admin access you can add, delete, update, and repair the information that is on the database. Since this data is in a Non-relational database any one can contribute to Our  database of MPC because it allows for automatic expansion and asynchronisation. 
 
