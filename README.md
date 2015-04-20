@@ -42,7 +42,4 @@ With a database containing over 600,000 records of orbital elements, that contai
 
 We have also added and API that allows the data to be used and shared easier than it was before. With admin access you can add, delete, update, and repair the information that is on the database. Since this data is in a Non-relational database any one can contribute to Our  database of MPC because it allows for automatic expansion and asynchronisation. 
 
-# To Run Locally
-
-Just download, or Clone this repo and run node then run our server.js file.
 
