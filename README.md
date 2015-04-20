@@ -4,7 +4,7 @@
 To Visit The Live Site:
 [Project Unkown](https://projectunkown-vcabieles.c9.io/)
 
-To Access Conente Management System:
+To Access Content Management System:
 [Project Unkown](https://projectunkown-vcabieles.c9.io/inedit)
 Username : test@test.com
 Password : test1
