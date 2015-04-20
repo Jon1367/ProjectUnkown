@@ -39,7 +39,7 @@ var calMath = [];
 var count = 1;
 
 
-
+// main index page
 router.get('/', function(req, res){
   
   var count = 1;
@@ -48,13 +48,13 @@ var diameters = new Array();
     mod.find(0, function(result){
       scene.push(result);
            
-
+ // varias loops inside of a 30k loop that allows us to determine size distance and dimater to then later be put into the same object so we can later manuplate the references
     mod.compareDia(function(data){
       
       diameters.push(data);
       var footbalField = 0.09144;
       var footbalresult = 0;
-      
+      // for os 2 for loops that lets us walk trought the inputed data of the first database query
        for(var i=0; i<=7; i++){
         
          var mathStuff = scene[0][i].a;
@@ -64,7 +64,7 @@ var diameters = new Array();
                 scene[0][i]["ScaleDistance"] = ActualMath;
         
               for (var j = 0; j < diameters[0].length; j++) {
-              
+                // second for loop that lets us put the newly calculated obejcts into the object array so we can later display
                 if (Math.round(scene[0][i].H) == Math.round(diameters[0][j].H) ) {
                   //console.log(result[i].H, data[j].H, 'we got this bitch compared');
                    var division = diameters[0][i].sps;
@@ -73,12 +73,12 @@ var diameters = new Array();
                   scene[0][i]["bps"] = Math.round(diameters[0][i].bps);
               
                     footbalresult = Math.round( division / footbalField );
-                  
+                  // error checking
                    scene[0][i]["howMany"] = footbalresult;
                   
            
                 }else if (Math.round(scene[0][i].H) > 17) {
-                
+                     // error checking to see if distance and magnitude is grated than 17H if it is it should be 1
                     scene[0][i]["sps"] = 1;
                     scene[0][i]["bps"] = 2;
                     scene[0][i]["howMany"] = 11;
@@ -99,7 +99,7 @@ var diameters = new Array();
   
 });
 
-
+// next page loader app same algorythm 
 router.get('/load:countPage', function (req, res) {
   var countPage = req.param("countPage");
   
