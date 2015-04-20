@@ -1,6 +1,13 @@
-
 <%- include editorheading.ejs %>
+<br></br>
 
+<div class="small-8 large-centered columns">
+    
+    
+       <div class="row">
+            <div class="large-12 columns text-center"><h2><a class="nameText" href="#">Update</a> </a></h2></div>
+        </div>
+    
 <form action="/processUpdateForm" method="POST">
 
     <input type="text" name="name" value="<%= data["des"] %>" >
@@ -27,8 +34,8 @@
     <input type="text" name="name" value="<%= data["Name"] %>" >
     <input type="text" name="name" value="<%= data["LastObs"] %>" >
     
-    <input type="submit">
+    <input type="submit" class="button expand">
 
 </form>
-
+</div>
 <%- include editorfooter.ejs %>

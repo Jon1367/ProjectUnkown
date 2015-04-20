@@ -1,17 +1,53 @@
 <div class="row">
-
     <% for(var i=0; i<8; i++){ %>
-        <div id="<%= data[i].Ref %><%= data[i].ScaleDistance %>" class="reveal-modal modalDude" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-               <%= data[i].Name %>
-               <%= data[i].ScaleDistance %>
+        <div id="<%= data[i].Ref %><%= data[i].ScaleDistance %>" class="reveal-modal modalDude" data-index="7" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+
+            <div class="row">
+                <div class="row">
+                    <div class="maginModal"></div>
+                    <div class="large-3 columns large-centered text-center"><img width="150" style="opacity: .8;" src="/img/test3.svg"></div>
+                </div>
+                <div class="row">
+                     <div class="large-3 columns large-centered text-center titleFont"><%= data[i].Name %></div>
+                </div>
+                <div class="row">
+                    <div class="maginModal"></div>
+                    <div class="large-4 columns text-center sizeFont"><h5>As big as:</h5><%= data[i].howMany %>x<img width="150" src="../img/field.jpg"></div>
+                    <div class="large-4 columns text-center sizeFont">
+                       <h5>Smallest Probable Size:</h5> <%= data[i].sps %>Km
+                    </div>
+                    <div class="large-4 columns text-center sizeFont">
+                        <h5>Biggest Probable Size:</h5><%= data[i].bps %>Km</div>
+                </div>
+                              <div class="row">
+                                  <div class="maginModal"></div>
+                                  <div class="large-4 columns text-center sizeFont">
+                                    <h5> Distance, Point Closest to the sun</h5> <%= data[i].a %>km
+                                    </div>
+                                  <div class="large-4 columns text-center sizeFont">
+                                    <h5>Composition:</h5>  <%= data[i].Comp %>
+                                 </div>
+                                  <div class="large-4 columns text-center sizeFont">
+                                   <h5>Epoch:</h5> <%= data[i].Epoch %>
+                                  </div>
+                              </div>
+                              
+                              
+
+
+               </div>
+     
+               
+               
         </div>
-    
+            <div id="distance<%= i %>"></div>
     <div class="small-12 large-6 large-centered medium-centered columns asteroidBottom<%= data[i].ScaleDistance %>">
         
         <div class="row">
-            <div class="large-12 columns text-center"><h2><a class="nameText" href="#" data-reveal-id="<%= data[i].Ref %><%= data[i].ScaleDistance %>" ><%= data[i].Name %></a></h2></div>
+            <div class="large-12 columns text-center"><h2><a class="nameText" href="#" data-reveal-id="<%= data[i].Ref %><%= data[i].ScaleDistance %>" data-index="7"><%= data[i].Name %></a></h2></div>
             <div class="large-4 columns text-center"><h5 class="nameText textHorizontal"> <%= data[i].Ref %> </h5></div>
-            <div class="large-4 columns text-center"><a href="#" data-reveal-id="<%= data[i].Ref %><%= data[i].ScaleDistance %>" ><img width="150" style="opacity: .8;" src="/img/test3.svg"></a></div>
+            <div class="large-4 columns text-center"><a href="#" data-reveal-id="<%= data[i].Ref %><%= data[i].ScaleDistance %>" data-index="7"><img width="150" style="opacity: .8;" src="/img/test3.svg"></a></div>
             <div class="large-4 columns text-center"> <h5 class="nameText textHorizontal"><%= data[i].LastObs %> </h5></div>
         </div>
         
@@ -21,12 +57,16 @@
             
   
         <!--</div>-->
+        
     </div>
-        <style>
+            <div id="distance<%= i %>"></div>
+
+    <style>
         .asteroidBottom<%= data[i].ScaleDistance %>{
             margin-top: <%= data[i].ScaleDistance %>px;
         }
     </style>
     <% } %>
+
 </div>  
 

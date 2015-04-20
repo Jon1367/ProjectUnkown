@@ -7,6 +7,8 @@ var options = {
 // connect to database
 mongoose.connect('mongodb://52.0.138.61/admin',options);
 
+
+// Step up blue print for Data Base
 var nasaSchema = mongoose.Schema({
   _id:  String,
   des: Number,
@@ -57,7 +59,7 @@ var diameterSchema = mongoose.Schema({
 
 });
 
-
+// Connect to Both dataBase
 var diameters = mongoose.model('diameters', diameterSchema);
 
 var nasaModel = mongoose.model('asteroids', nasaSchema);  
@@ -70,7 +72,8 @@ exports.find = function(count, callback){
     //var count = data;
     
  	console.log(count, 'this is the page count here');
-    
+ 	
+    // Runs a Find Query to only bring back 8 and keep count
 	nasaModel.find(function (err, kittens) {
 		if (err) return console.error(err);
 	  	callback(kittens);
@@ -79,9 +82,10 @@ exports.find = function(count, callback){
 };
 exports.findAll = function(callback){ 
 
-    
+    // Query brings back all the Asteriod in DB
 	nasaModel.find(function (err, kittens) {
 		if (err) return console.error(err);
+		// Sends info to the server.js
 	  	callback(kittens);
 	});
 
@@ -90,7 +94,7 @@ exports.findAll = function(callback){
 exports.insert = function(array){ 
     
 	console.log(array);
- 
+ 	// Getting the array info and parasing it to the right Data Types 
 	var des = parseInt(array[0]);
 	var H = parseInt(array[1]);
 	var G = parseInt(array[2]);
@@ -115,6 +119,7 @@ exports.insert = function(array){
 	var name = String(array[21]);
 	var LastObs = String(array[22]);
 
+	// Creating a new Asteriod
 	var asteroid = new nasaModel({
 
 	_id:"",
@@ -142,7 +147,7 @@ exports.insert = function(array){
   	Name: name,
   	LastObs: LastObs
 	});
-
+	// Saving new Asteriod into the DB
 	asteroid.save(function (err,result) {
 		if (err) return console.error(err);
 	  	console.log(result);
@@ -152,12 +157,12 @@ exports.insert = function(array){
 
 
 exports.findOne = function(name, callback){
-	
+	// Only Find one Asteriod
 	nasaModel.findOne({Name:name},function (err, myDocument) {
         if (err) return console.error(err);
         console.log("findOne");
         console.log(myDocument);
-
+		// Sends info to the server.js
         callback(myDocument);
     });
 };
@@ -166,7 +171,7 @@ exports.update = function(array){
 	console.log("Hello Model");
 	console.log(array);
 
-
+ 	// Getting the array info and parasing it to the right Data Types 
 	var des = parseInt(array[0]);
 	var H = parseInt(array[1]);
 	var G = parseInt(array[2]);
@@ -191,10 +196,8 @@ exports.update = function(array){
 	var name = String(array[21]);
 	var LastObs = String(array[22]);
 
-
-
-	// console.log(typeof(id));
-
+	
+	// Updating the Asteriod
 	nasaModel.update(
 		{
   	des: des,
@@ -226,8 +229,15 @@ exports.update = function(array){
 		});
 
 };
- 
- 
+exports.deleteName= function(name){ 
+
+	// Grabs speific name then finds and Deltes from DB
+	nasaModel.findOneAndRemove({ Name: name }, function(err) {
+  		if (err) throw err;
+  		// we have deleted the user
+  		console.log('User deleted!');
+	});
+};
 exports.testChris = function(testC, callback){
 	   
 	   diameters.find({H:testC},function (err, myData) {

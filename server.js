@@ -32,10 +32,7 @@ router.use(express.static(path.resolve(__dirname, '/')));
 router.set('view engine', 'ejs');
 router.use(express.cookieParser());
 router.use(express.session({secret: '1234567890QWERTY'}));
-// router.use(serveAngular({
-//   layout: __dirname + '/client/index.html'
 
-// }));
 var adminLogin = false;
 var objectData = [];
 var calMath = [];
@@ -78,7 +75,7 @@ var diameters = new Array();
                     footbalresult = Math.round( division / footbalField );
                   
                    scene[0][i]["howMany"] = footbalresult;
-                   console.log( Math.round(scene[0][i].H), "dimameters");
+                  
            
                 }else if (Math.round(scene[0][i].H) > 17) {
                 
@@ -98,12 +95,7 @@ var diameters = new Array();
     }); 
   
 });
-  
-  
-  
-  
-  
-  	
+
   
 });
 
@@ -144,7 +136,7 @@ var diameters = new Array();
                     footbalresult = Math.round( division / footbalField );
                   
                    scene[0][i]["howMany"] = footbalresult;
-                   console.log( Math.round(scene[0][i].H), "dimameters");
+                  
            
                 }else if (Math.round(scene[0][i].H) > 17) {
                 
@@ -165,92 +157,7 @@ var diameters = new Array();
   
 });
   
-  
-  
-  
-  
-  	
-  
 });
-
-
-
-
-
-
-
-// router.get('/', function(req, res){
-  
-       
-// // io.on('connection', function (socket) {
-
-// var count = 1;
-  
-//     mod.find(count,function(result){
-    
-// 		  objectData.push(result);
-// 		  //console.log('server.js');
-// 		  //console.log(data);
-		  
-		  
-// 		   for(var i=0; i<8; i++){
-		    
-// 		     var mathStuff = result[i].a;
-// 		      var AU = 149597870.700;
-// 		      var scale = 275000;
-//           var ActualMath = Math.floor(AU*mathStuff/scale);
-
-// 		        //console.log(ActualMath);
-// 		        calMath.push(ActualMath);
-// 		  }
-//   		  	var newData = objectData[0];
-  		  	
-  		  	
-  		  	
-//         	//console.log('new Data');
-//         	//console.log(newData);
-// 			res.render('index',{data:newData,
-// 			math:calMath,
-// 			count:count,
-// 			down:count
-// 			});	
-// 	});
-	
-// });
-
-
-// router.get('/load:countPage', function (req, res) {
-//   var countPage = req.param("countPage");
-  
-  
-
-// 	 var objectData = [];
-// 	 var calMath = [];
-	 
-//     //console.log(prevCount);
-//     mod.find(countPage,function(result){
-    
-// 		  objectData.push(result);
-// 		   for(var i=0; i<8; i++){
-// 		     //Do Math
-// 		     var mathStuff = result[i].a;
-// 		      var AU = 149597870.700;
-// 		      var scale = 250000;
-//           var ActualMath = Math.floor(AU*mathStuff/scale);
-//         //Done with Math Stuff
-// 		    calMath.push(ActualMath);
-// 		  }
-
-		  
-//   		  	var newData = objectData[0];
-
-//   			res.send({data:newData, math:calMath});	
-// 	});
-    
-    
-
-// });
-
 
 router.get('/inedit', function(req, res){
   
@@ -267,9 +174,9 @@ router.post('/editarForm', function(req, res){
       password : password
     }, function(error, authData) {
       if (error) {
-        console.log("Login Failed!", error);
+       
       } else {
-        console.log("Authenticated successfully with payload:", authData);
+        
          res.redirect("/editor");
       }
     });
@@ -327,10 +234,10 @@ router.get('/newAdmin', function(req,res){
   
   if (authData) {
     res.render('newAdmin');
-    console.log("User " + authData.uid + " is logged in with " + authData.provider);
+   
     
   } else {
-    console.log("User is logged out");
+   
     res.redirect("/inedit");
   }
 });
@@ -345,7 +252,7 @@ router.post('/AddAmind', function(req, res){
   password : password
 }, function(error, userData) {
   if (error) {
-    console.log("Error creating user:", error);
+
   } else {
     res.redirect('/');
   }
@@ -363,66 +270,78 @@ router.get('/Nasa', function(req, res) {
 
 // CRUD
 router.get('/addAstro',function(req,res){
-   if(loggedin){
+    // render Add Form
     res.render('addAstro');
-  }else{
-    res.redirect('/');
-  }
-  
+
 });
 
 router.get('/deleteAstro',function(req,res){
-   if(loggedin){
+  
+  // Check if Admin is logged In
+  if(loggedin){
     res.render('deleteAstro');
   }else{
     res.redirect('/');
   }
   
 });
-
+// Grabs Asteriod info and renders updateForm
 router.get('/info/:id', function(req, res){
+  
 	var id = req.param("id");
-	console.log(typeof(id));
-	console.log(id);
+	// Finds specfic asteriod from Search
 	mod.findOne(id ,function(result){
-	console.log("callback");
-	console.log(result);
-	res.render('./updateAstro',{data: result});
+	    res.render('./updateAstro',{data: result});
   });
+  
 });
 
 router.post('/processSearch',function(req, res){
 
 	var name = req.body.name;
-
+	// Finds asteriod or redirect if fails
  	mod.findOne(name ,function(result){
- 	console.log("callback");
- 	console.log(result);
-	res.render('./viewAstro',{data: result});
+   	if(result == null){
+   	    res.redirect('/');
+   	}else{
+   		res.render('./viewAstro',{data: result});  
+   	}
 	});
+
+});
+// Deltes name
+router.get('/processDeleteAsteroid/:name', function(req, res){
+  
+  // Grabs Name form details page
+	var name = req.params.name;
+	console.log(name);
+	
+	// Deletes name
+	mod.deleteName(name);
+
+  res.redirect('/');
+
 
 });
 router.post('/processAdminSearch',function(req, res){
 
 	var name = req.body.name;
-
+  // Finds Asteriod from Admin Search 
  	mod.findOne(name ,function(result){
- 	console.log("callback");
- 	console.log(result);
-	res.render('./viewAdminAstro',{data: result});
+ 	  // Check if input is correct
+ 	  if(result == null){
+ 	    res.redirect('/');
+ 	  }else{
+	    res.render('./viewAdminAstro',{data: result});
+ 	  }
 	});
 
 });
 router.post('/processUpdateForm', function(req, res){
 
-	//var data;
-	console.log("request");
-	console.log(req.body.name);
-
-	var info = req.body.name;
-
-	  mod.update(info);
-
+	 var info = req.body.name;
+  //Calls update function to update the Specific Asteriod
+	mod.update(info);
 
     res.redirect('/');
 
@@ -430,12 +349,20 @@ router.post('/processUpdateForm', function(req, res){
 router.post('/processAddAsteroid', function(req, res){
 
 	var info = req.body.info;
-	console.log(info);
+  // Calls add function to add new Asteriod to Data Base
 	mod.insert(info);
 	
 	res.redirect('/');
 
 });
+router.get('/api', function(req, res) {
+    
+
+          res.render('api');	
+      
+
+
+}); // router closing tag
 router.get('/test', function(req, res) {
     
 var scene = new Array();
@@ -470,7 +397,7 @@ var diameters = new Array();
                     footbalresult = Math.round( division / footbalField );
                   
                    scene[0][i]["howMany"] = footbalresult;
-                   console.log( Math.round(scene[0][i].H), "dimameters");
+                
            
                 }else if (Math.round(scene[0][i].H) > 17) {
                 
@@ -490,34 +417,8 @@ var diameters = new Array();
   
 });
     
-     
-         
-          
-   
-     
-  
+
 }); // router closing tag
-
-
-router.get('/test2', function(req, res) {
-  
-  mod.find(0, function(result){
-    for(var i=0; i<8; i++){
-      mod.testChris(result[i].H, function(dataReturned){
-        
-        console.log(dataReturned);
-        // if(dataReturned.H > 17.5){
-        //   console.log('This is larger then 17.5');
-        // }else{
-        // console.log(dataReturned);
-      
-        // }
-      })
-    }
-  });
-  
-});
-
 
 // this is creating the node server and is helping to keep the ports open for socker io.
 server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){

@@ -1,0 +1,42 @@
+<%- include header.ejs %>
+<span><img src="/img/star-2.png" alt="star red" class="starRed"/></span>
+<span><img src="/img/starBlue.png" alt="star blue" class="starBlue"/></span>
+<!--<span><img src="/img/ISS.png" alt="ISS International Space Station" class="ISS"/></span>-->
+
+    <div class="row apiBG">
+        <div class="large-12 columns ">
+            <h1 class="titleFont">Project Unknown API</h1>
+            <p class="apiText"><b>How the data works and its Parameters</b></p>
+            <h3><a href="/nasa">Check out the API Here!</a></h3>
+              <ul class="apiList">
+              <li><code>" _id " - <b>Unique ID for each Asteroid</b></code></li>
+              <li><code>" des " - <b>Reference Number for Asteroid</b></code></li>
+              <li><code>" H " - <b>Absolute Magnitude of the asteroid</b></code></li>
+              <li><code>" G " - <b>Slope Parameter G</b></code></li>
+              <li><code>" Epoch " - <b>Epoch of the observation gived in packed form</b></code></li>
+              <li><code>" M " - <b>Mean anomaly at the epoch</b></code></li>
+              <li><code>" e " - <b>Eccentricity of the orbit</b></code></li>
+              <li><code>" n " - <b>Mean Daily Motion</b></code></li>
+              <li><code>" a "- <b>Orbital semimajor axis</b></code></li>
+              <li><code>" UP " - <b>Indicates if the orbital eccentricity was assumed</b></code></li>
+              <li><code>" Ref " - <b>Gives the reference for the data</b></code></li>
+              <li><code>" Obs " - <b>Number of Observations</b></code></li>
+              <li><code>" Opp " - <b>Number of Oppositions</b></code></li>
+              <li><code>" Arc " - <b>Time between first and last observations or length of observed arc in days</b></code></li>
+              <li><code>" rms " - <b>RMS Residual of orbital fit</b></code></li>
+              <li><code>" Pert1 " - <b>Indicates the perturbing objects and dynamical theory</b></code></li>
+              <li><code>" Pert2 " - <b>Indicates the perturbing objects and dynamical theory</b></code></li>
+              <li><code>" Comp " - <b>Identifies the computer of the orbit</b></code></li>
+              <li><code>" Type " - <b>Additional information on the type of orbit.</b></code></li>
+              <li><code>" Name " - <b>Designation of the Asteroid in readable format</b></code></li>
+              <li><code>" LastObs " - <b>Date of last observation</b></code></li>
+              <li><code>" sps " - <b>Smallest Probable Size</b></code></li>
+              <li><code>" bps " - <b>Biggest Probable Size</b></code></li>
+              <li><code>" howMany " - <b>How many football fields</b></code></li>
+              <li><code>" ScaleDistance " - <b>Distance from earth at 275,000th Km scale</b></code></li>
+               </ul>
+        </div>
+    </div>
+
+
+<%- include footer.ejs %>

@@ -1,32 +1,40 @@
 <%- include editorheading.ejs %>
+<br></br>
+     
+<div class="small-8 large-centered columns">
+    
+       <div class="row">
+            <div class="large-12 columns text-center"><h2><a class="nameText" href="#">Unknown</a> </a></h2></div>
+        </div>
+    
+    <form action="/processAddAsteroid" method="POST">
+    
+        <input type="text" name="info" placeholder="des">
+        <input type="text" name="info" placeholder="H"  >
+        <input type="text" name="info" placeholder="G" >
+        <input type="text" name="info" placeholder="Epoch" >
+        <input type="text" name="info" placeholder="M"  >
+        <input type="text" name="info" placeholder="Peri"  >
+        <input type="text" name="info" placeholder="Node"  >
+        <input type="text" name="info" placeholder="Incl" >
+        <input type="text" name="info" placeholder="e">
+        <input type="text" name="info" placeholder="n" >
+        <input type="text" name="info" placeholder="a" >
+        <input type="text" name="info" placeholder="up" >
+        <input type="text" name="info" placeholder="ref" >
+        <input type="text" name="info" placeholder="obs" >
+        <input type="text" name="info" placeholder="opp">
+        <input type="text" name="info" placeholder="Arc" >
+        <input type="text" name="info" placeholder="rms" >
+        <input type="text" name="info" placeholder="Pert1">
+        <input type="text" name="info" placeholder="Pert2" >
+        <input type="text" name="info" placeholder="Comp">
+        <input type="text" name="info" placeholder="Type" >
+        <input type="text" name="info" placeholder="Name">
+        <input type="text" name="info" placeholder="LastObs">
+        <input type="submit" class="button expand">
+    </form>
 
-<form action="/processAddAsteroid" method="POST">
-
-<input type="text" name="info" placeholder="des">
-<input type="text" name="info" placeholder="H"  >
-<input type="text" name="info" placeholder="G" >
-<input type="text" name="info" placeholder="Epoch" >
-<input type="text" name="info" placeholder="M"  >
-<input type="text" name="info" placeholder="Peri"  >
-<input type="text" name="info" placeholder="Node"  >
-<input type="text" name="info" placeholder="Incl" >
-<input type="text" name="info" placeholder="e">
-<input type="text" name="info" placeholder="n" >
-<input type="text" name="info" placeholder="a" >
-<input type="text" name="info" placeholder="up" >
-<input type="text" name="info" placeholder="ref" >
-<input type="text" name="info" placeholder="obs" >
-<input type="text" name="info" placeholder="opp">
-<input type="text" name="info" placeholder="Arc" >
-<input type="text" name="info" placeholder="rms" >
-<input type="text" name="info" placeholder="Pert1">
-<input type="text" name="info" placeholder="Pert2" >
-<input type="text" name="info" placeholder="Comp">
-<input type="text" name="info" placeholder="Type" >
-<input type="text" name="info" placeholder="Name">
-<input type="text" name="info" placeholder="LastObs">
-<input type="submit">
-	
-</form>
+</div>
 
 <%- include editorfooter.ejs %>

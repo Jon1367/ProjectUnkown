@@ -16,14 +16,41 @@
 <div class="row">
     <% for(var i=0; i<8; i++){ %>
         <div id="<%= data[i].Ref %><%= data[i].ScaleDistance %>" class="reveal-modal modalDude" data-index="7" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+
+            <div class="row">
+                <div class="row">
+                    <div class="maginModal"></div>
+                    <div class="large-3 large-centered columns large-centered text-center"><img width="150" style="opacity: .8;" src="/img/test3.svg"></div>
+                </div>
+                <div class="row">
+                    <div class="large-4 large-centered columns large-centered text-center titleFont"><%= data[i].Name %></div>
+                </div>
+                <div class="row">
+                    <div class="maginModal"></div>
+                    <div class="large-4 columns text-center sizeFont"><h5>As big as:</h5><%= data[i].howMany %>x<img width="150" src="../img/field.jpg"></div>
+                    <div class="large-4 columns text-center sizeFont">
+                       <h5>Smallest Probable Size:</h5> <%= data[i].sps %>Km
+                    </div>
+                    <div class="large-4 columns text-center sizeFont">
+                        <h5>Biggest Probable Size:</h5><%= data[i].bps %>Km</div>
+                </div>
                               <div class="row">
-                              <div class="large-6 columns text-center"><img width="150" style="opacity: .8;" src="/img/test3.svg"></div>
-                              <div class="large-6 columns text-center"><%= data[i].Name %></div>
-               <%= data[i].Name %>
-               <%= data[i].ScaleDistance %>
-               
-               
-               <%= data[i].howMany %>
+                                  <div class="maginModal"></div>
+                                  <div class="large-4 columns text-center sizeFont">
+                                    <h5> Distance, Point Closest to the sun</h5> <%= data[i].a %>AU
+                                    </div>
+                                  <div class="large-4 columns text-center sizeFont">
+                                    <h5>Composition:</h5>  <%= data[i].Comp %>
+                                 </div>
+                                  <div class="large-4 columns text-center sizeFont">
+                                   <h5>Epoch:</h5> <%= data[i].Epoch %>
+                                  </div>
+                              </div>
+                              
+                              
+
+
                </div>
      
                
